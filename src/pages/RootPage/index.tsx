@@ -1,11 +1,23 @@
+import { useState } from "react";
+import CaptureWebcam from "@/components/Webcam/CaptureWebcam";
+
 const RootPage = () => {
+  const [isCompleted, setIsCompleted] = useState<boolean>(false);
+  const [imgs, setImgs] = useState<string[]>([]);
   return (
     <div className="flex flex-col">
       <div className="fixed top-0 left-0 z-50 w-full h-16 bg-purple-500 border-t border-purple-900 font-bold text-gray-950 flex items-center justify-center">
         Four frames of life
       </div>
-      <div className="fixed top-16 left-0 bottom-16 w-full bg-black border-gray-900 flex items-center justify-center">
-        {/* <Webcam /> */}
+      <div className="fixed top-16 left-0 bottom-16 w-full bg-black border-gray-900 flex-col items-center justify-center">
+        {isCompleted ||
+          <CaptureWebcam isCaptureable={true} captureCount={10} onCompleteCapture={(photos: string[]) => { setImgs(photos); setIsCompleted(true); }} />
+        }
+        {isCompleted &&
+          imgs.map((url, index) => (
+            <img key={index} src={url} alt={`Image ${index}`} />
+          ))
+        }
       </div>
       <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-purple-500 border-t border-purple-900 font-bold flex items-center justify-center">
         <div className="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
