@@ -1,15 +1,13 @@
 
-import Webcam from 'react-webcam'
+import { RouterProvider } from 'react-router-dom';
 import './App.css'
+import router from './router';
 
-function App() {
+const App : React.FC = () => {
   return (
-    <>
-      <div>
-        <Webcam/>
-      </div>
-    </>
-  )
+    <RouterProvider router={router} />
+  );
 }
+
 
 export default App
