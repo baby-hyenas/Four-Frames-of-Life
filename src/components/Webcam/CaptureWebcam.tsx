@@ -1,5 +1,8 @@
+'use client';
+
 import React, {useState} from 'react'
 import Webcam from 'react-webcam'
+import { Button } from 'flowbite-react';
 
 const videoConstraints = {
   width: 1280,
@@ -18,12 +21,10 @@ const CaptureWebcam: React.FC<CaptureWebcamProps> = (props: CaptureWebcamProps) 
   const webcamRef = React.useRef<Webcam>(null);
   const capture = React.useCallback(
     () => {
-      if ( webcamRef && webcamRef.current ) {
-        const newPhoto = webcamRef.current?.getScreenshot();
+      const newPhoto = webcamRef.current?.getScreenshot();
         if( newPhoto )
           setPhotos([...photos, newPhoto]);
-      }
-
+          
       if(photos.length >= props.captureCount) {
         props.onCompleteCapture(photos);
       }
@@ -32,21 +33,18 @@ const CaptureWebcam: React.FC<CaptureWebcamProps> = (props: CaptureWebcamProps) 
   ); 
 
   return (
-    <div className="fixed top-16 left-0 bottom-16 w-full bg-black border-gray-900 flex-col items-center justify-center">
-      <div>
+    <div className = "flex flex-col items-center justify-center gap-4">
       <Webcam 
         audio={false}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
         videoConstraints={videoConstraints}
       />
-      </div>
-      <div>
-        <button onClick={capture}>Capture</button>
-      </div>
+      <Button size="xl" color="dark" onClick={capture}>
+        Capture
+      </Button>
     </div>
   );
 }
-
 
 export default CaptureWebcam
