@@ -43,7 +43,7 @@ const CaptureWebcam: React.FC<CaptureWebcamProps> = (props: CaptureWebcamProps) 
         />
       </div>
       <div className="h-1/4">
-        <Button size="xl" color="dark" onClick={capture}>
+        <Button pill size="xl" gradientDuoTone="purpleToPink" onClick={()=>capture()}>
           Capture
         </Button>
       </div>
