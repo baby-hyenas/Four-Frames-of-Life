@@ -4,7 +4,7 @@ type ImageGalleryProps = {
 };
 
 const ImageGallery: React.FC<ImageGalleryProps> = (props: ImageGalleryProps) => {
-  const chunkedImages = props.images.reduce((result, item, index) => {
+  const chunkedImages: Array<string[]> = props.images.reduce((result: Array<string[]>, _, index) => {
     if (index % 2 === 0) {
       result.push(props.images.slice(index, index + 2));
     }
