@@ -1,4 +1,4 @@
-import { RootPage, PageLayout, CapturePage } from '@/pages';
+import { RootPage, PageLayout, CapturePage, ResultPage } from '@/pages';
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
         {
           path: '/capture',
           element: <CapturePage />,
+        },
+        {
+          path: '/result',
+          element: <ResultPage />,
         },
         {
           path: '/*',
