@@ -3,8 +3,8 @@ import Webcam from 'react-webcam'
 import { Button } from 'flowbite-react';
 
 const videoConstraints = {
-  width: 720,
-  height: 1280,
+  width: 960,
+  height: 720,
   facingMode: "user"
 };
 
@@ -31,21 +31,23 @@ const CaptureWebcam: React.FC<CaptureWebcamProps> = (props: CaptureWebcamProps) 
   );
 
   return (
-    <div className="flex flex-col items-center justify-center content-center h-full gap-4">
-      <div className="h-3/4">
-        <Webcam
-          audio={false}
-          ref={webcamRef}
-          screenshotFormat="image/jpeg"
-          videoConstraints={videoConstraints}
-        />
+    <>
+      <div className="flex h-full w-full justify-center">
+        <div className="flex-wrap max-h-[80vh] max-w-screen object-contain">
+          <Webcam
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          />
+        </div>
+        <div className="absolute bottom-10 justify-center items-center">
+          <Button pill size="xl" gradientDuoTone="purpleToPink" onClick={() => capture()}>
+            Capture
+          </Button>
+        </div>
       </div>
-      <div className="h-1/4">
-        <Button pill size="xl" gradientDuoTone="purpleToPink" onClick={()=>capture()}>
-          Capture
-        </Button>
-      </div>
-    </div>
+    </>
   );
 }
 
