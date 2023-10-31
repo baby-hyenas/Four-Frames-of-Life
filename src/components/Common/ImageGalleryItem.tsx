@@ -16,13 +16,18 @@ const ImageGalleryItem: React.FC<ImageGalleryItemProps> = ({ imageUrl }) => {
   };
 
   return (
-    <div onClick={handleImageClick} className="relative object-cover p-2">
-      <img src={imageUrl}/>
-      {isSelected && (
-        <div className='text-green-400'>
-          <HiCheckCircle className="absolute top-4 left-4 w-8 h-8"/>
-        </div>
-      )}
+    <div onClick={handleImageClick} className="relative flex max-w-[90%] max-h-[90%] justify-center bg-black">
+      {isSelected ||
+        <img src={imageUrl} className="object-contain items-center py-1"/>
+      }
+      {isSelected && 
+        <>
+          <img src={imageUrl} className="object-contain items-center py-3" />
+          <div className='text-green-400'>
+            <HiCheckCircle className="absolute top-4 left-4 w-8 h-8" />
+          </div>
+        </>
+      }
     </div>
   );
 }

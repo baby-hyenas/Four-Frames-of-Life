@@ -8,11 +8,9 @@ const PageLayout = () => {
   return (
     <Suspense fallback={<Loading />}>
       <ScrollToTop />
-      <div className="h-screen">
-        <div className="max-w-[480px] bg-white h-screen m-auto">
-        <NavBar title = "Four Frames of Life"/>
-          <Outlet />
-        </div>
+      <div className="w-screen h-screen bg-black">
+        <NavBar title="Four Frames of Life" />
+        <Outlet />
       </div>
     </Suspense>
   );
