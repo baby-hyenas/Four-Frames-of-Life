@@ -16,12 +16,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = (props: ImageGalleryProps) => 
 
   return (
     <div className="flex flex-col w-full h-full">
-      {/* {chunkedImages.map((urls, index) => (
+      {chunkedImages.map((urls, index) => (
         <div key={index} className="flex flex-row w-full h-1/5 justify-center">
           <ImageGalleryItem imageUrl={urls[0]}/>
           <ImageGalleryItem imageUrl={urls[1]}/>
         </div>
-      ))} */}
+      ))}
     </div>
   );
 }
