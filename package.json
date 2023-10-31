@@ -17,7 +17,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
     "react-webcam": "^7.2.0",
-    "yarn": "^1.22.19"
+    "yarn": "^1.22.19",
+    "lottie-react": "^2.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
