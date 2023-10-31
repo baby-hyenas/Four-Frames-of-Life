@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import { CaptureWebcam } from '@/components/Webcam';
-import { ImageGallery, NavBar } from '@/components/Common';
+import React from "react";
 import { Button } from 'flowbite-react';
 import { useNavigate } from 'react-router-dom';
 
 const RootPage = () => {
-  const [isCompleted, setIsCompleted] = useState<boolean>(false);
-  const [imgs, setImgs] = useState<string[]>([]);
-  //const [selectedImgs, setSelectedImgs] = useState<string[]>([]);
   const navigate = useNavigate();
 
   const autoCapture = () => {
