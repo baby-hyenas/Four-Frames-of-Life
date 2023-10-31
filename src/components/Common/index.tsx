@@ -1,5 +1,5 @@
-import ImageCarousel from "./ImageCarousel";
 import ImageGallery from "./ImageGallery";
+import ImageGalleryItem from "./ImageGalleryItem";
 import NavBar from "./NavBar";
 
-export {ImageCarousel, ImageGallery, NavBar};
+export {ImageGallery, ImageGalleryItem, NavBar};
