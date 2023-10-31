@@ -1,12 +1,10 @@
-'use client';
-
 import React, { useState } from 'react'
 import Webcam from 'react-webcam'
 import { Button } from 'flowbite-react';
 
 const videoConstraints = {
-  width: 1280,
-  height: 720,
+  width: 720,
+  height: 1280,
   facingMode: "user"
 };
 
