@@ -15,14 +15,16 @@ const CapturePage = () => {
   }
 
   return (
-    <div className="max-w-screen max-h-screen">
-      {isCompleted ||
-        <CaptureWebcam isCaptureable={true} captureCount={10} onCompleteCapture={(photos: string[]) => { setImgs(photos); setIsCompleted(true); }} />
-      }
-      {isCompleted &&
-        <ImageGallery images={imgs} selectCount={4} onCompletedSelect={(selected: string[]) => { gotoResultPage(selected); }} />
-      }
-    </div>
+    <>
+      <div className="max-w-screen max-h-screen">
+        {isCompleted ||
+          <CaptureWebcam isCaptureable={true} captureCount={10} onCompleteCapture={(photos: string[]) => { setImgs(photos); setIsCompleted(true); }} />
+        }
+        {isCompleted &&
+          <ImageGallery images={imgs} selectCount={4} onCompletedSelect={(selected: string[]) => { gotoResultPage(selected); }} />
+        }
+      </div>
+    </>
   );
 };
 
