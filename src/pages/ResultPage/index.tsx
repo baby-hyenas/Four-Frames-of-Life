@@ -2,9 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 const ResultPage = () => {
   const location = useLocation();
-  console.log(location.state);
   const state = location.state as { images: string[] };
-  console.log(state.images);
   return (
     <>
       <div className="max-w-screen max-h-screen justify-center items-center p-4">
