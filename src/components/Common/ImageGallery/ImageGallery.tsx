@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'flowbite-react';
-import { ImageGalleryItem } from ".";
+import ImageGalleryItem from './ImageGalleryItem';
 
 type ImageGalleryProps = {
   selectCount: number,
@@ -45,4 +45,4 @@ const ImageGallery: React.FC<ImageGalleryProps> = (props: ImageGalleryProps) => 
   );
 }
 
-export default ImageGallery
+export default ImageGallery;

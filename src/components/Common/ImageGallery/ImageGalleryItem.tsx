@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState } from 'react';
 import { HiCheckCircle } from 'react-icons/hi';
 

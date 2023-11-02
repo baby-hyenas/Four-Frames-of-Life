@@ -1,8 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import ScrollToTop from '@/ScrollToTop';
-import Loading from '@components/Common/Loading';
-import { NavBar } from '@/components/Common';
+import { Loading, NavBar } from '@/components/Common';
 
 const PageLayout = () => {
   return (

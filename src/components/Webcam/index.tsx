@@ -1,3 +1,1 @@
-import CaptureWebcam from "./CaptureWebcam";
-
-export {CaptureWebcam};
+export {default as CaptureWebcam} from './CaptureWebcam';
